@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Layouts.Chatbox">
+
+    <item android:id="@+id/action_view_profile"
+        android:icon="@drawable/contact_vc"
+        android:title="@string/action_view_profile"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/action_mute"
+        android:title="@string/action_mute"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_block"
+        android:title="@string/action_block"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_delete_chat"
+        android:title="@string/action_delete_conversation"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_update_status"
+        android:title="@string/action_update_status"
+        android:visible="false"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_add_member"
+        android:title="@string/action_add_member"
+        android:visible="false"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_leave_group"
+        android:title="@string/action_leave_group"
+        android:visible="false"
+        app:showAsAction="never" />
+</menu>

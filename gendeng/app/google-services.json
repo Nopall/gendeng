@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "71391340350",
+    "firebase_url": "https://messanger-178708.firebaseio.com",
+    "project_id": "messanger-178708",
+    "storage_bucket": "messanger-178708.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71391340350:android:a383216e5ba98ee6",
+        "android_client_info": {
+          "package_name": "com.softdev.weekimessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71391340350-729v55ieuvelvukoms801gvq22clckfq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softdev.weekimessenger",
+            "certificate_hash": "48ea44f066c8bf312a9c6ce717adb47061c26cd7"
+          }
+        },
+        {
+          "client_id": "71391340350-8ersat4q2rls36q59vli98ilghugolgb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvPYpSDhHVfqS_lZAk6uwD6KSDGc4JJaY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71391340350-8ersat4q2rls36q59vli98ilghugolgb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

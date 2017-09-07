@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/viewChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:scrollbars="vertical"
+        android:layout_above="@+id/divider"/>
+
+    <LinearLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:background="@drawable/line_divider"
+        android:layout_above="@+id/container"/>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:id="@+id/form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFF"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/btnEmoticons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/emoticons_button"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:tint="@color/colorPrimary"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/btnImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_photo"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:tint="@color/colorPrimary"
+                android:background="@null"/>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:background="@drawable/line_divider"
+                android:layout_gravity="center"
+                android:layout_marginLeft="6dp"/>
+
+            <com.rockerhieu.emojicon.EmojiconMultiAutoCompleteTextView
+                android:id="@+id/txtMessage"
+                android:layout_width="0dp"
+                android:hint="Enter message"
+                android:background="@null"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="50dp"
+                android:layout_weight="3"
+                android:layout_gravity="center"
+                android:singleLine="true"/>
+
+            <LinearLayout
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/send_button"
+                android:padding="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_gravity="center"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/send_button"
+                android:padding="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_gravity="center"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Send"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/emojicons"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_below="@+id/form"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

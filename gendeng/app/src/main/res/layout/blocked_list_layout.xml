@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="2dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:civ_border_color="@color/border"
+            app:civ_border_width="1dp"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="#444444"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:text="Ismail Qasim"
+        android:layout_toRightOf="@id/thumbnail"/>
+
+    <TextView
+        android:id="@+id/blockDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="#444444"
+        android:textSize="12sp"
+        android:layout_marginTop="30dp"
+        android:text="Block Date: 2016-01-12"
+        android:layout_toRightOf="@id/thumbnail"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentRight="true">
+
+        <Button
+            android:id="@+id/unBlockBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:drawableLeft="@drawable/ic_block"
+            android:adjustViewBounds="true"
+            android:text="Remove block"
+            android:drawablePadding="5dp"
+            android:textAllCaps="false"
+            android:layout_alignParentRight="true"
+            android:tint="#35781a" />
+    </LinearLayout>
+</RelativeLayout>

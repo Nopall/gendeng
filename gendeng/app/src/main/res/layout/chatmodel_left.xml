@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="start"
+    android:orientation="horizontal"
+    android:paddingLeft="12dp">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/default_user"
+            app:civ_border_color="@color/border"
+            app:civ_border_width="1dp"/>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bubble_white"
+            android:layout_marginLeft="8dp">
+
+            <com.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/txtMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is a test message."
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_below="@id/txtMessage"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/timestamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_below="@id/txtMessage"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

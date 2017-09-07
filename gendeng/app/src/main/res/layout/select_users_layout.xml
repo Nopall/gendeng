@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="2dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/listLayoutIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/listLayoutName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="#444444"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="Ismail Qasim"
+        android:layout_toRightOf="@id/thumbnail"/>
+
+    <com.rockerhieu.emojicon.EmojiconTextView
+        android:id="@+id/listLayoutStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="#444444"
+        android:textStyle="italic"
+        android:textSize="12sp"
+        android:layout_marginTop="22dp"
+        android:text="Just another user."
+        android:layout_toRightOf="@id/thumbnail"/>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center"/>
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/prefs_account_category_1">
+            <Preference
+                android:title="Profile picture"
+                android:summary="@string/prefs_account_pPictureStr"
+                android:key="prefs_account_profilePic"/>
+            <EditTextPreference
+                android:title="Profile name"
+                android:summary="@string/prefs_account_pNameStr"
+                android:key="prefs_account_profileName"/>
+            <EditTextPreference
+                android:title="Status"
+                android:summary="@string/prefs_account_pStatusStr"
+                android:maxLength="190"
+                android:key="prefs_account_profileStatus"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/prefs_account_category_2">
+            <Preference
+                android:title="Username"
+                android:editable="false"
+                android:key="pref_account_txtUsername"/>
+            <EditTextPreference
+                android:id="@+id/pref_account_txtPassword"
+                android:title="Password"
+                android:key="pref_account_txtPassword"
+                android:inputType="textPassword"/>
+            <Preference
+                android:title="Email"
+                android:inputType="textEmailAddress"
+                android:key="pref_account_txtEmail"
+                android:editable="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/prefs_account_category_3">
+        <Preference
+            android:title="@string/prefs_account_bFragmentStr"
+            android:summary="@string/prefs_account_bFragmentSum"
+            android:key="prefs_account_blocklist"/>
+    </PreferenceCategory>
+</PreferenceScreen>

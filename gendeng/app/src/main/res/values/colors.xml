@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#055E54</color>
+    <color name="colorPrimaryDark">#054D44</color>
+    <color name="colorAccent">#01887A</color>
+
+    <color name="notificationBubble">#055E54</color>
+    <color name="listDivider">#dedede</color>
+    <color name="bg_bubble_self">#E1E1E1</color>
+    <color name="activitylbl">#303F9F</color>
+
+    <!-- Chat Model -->
+    <color name="chatDate">#303F9F</color>
+    <color name="chatSender">#3F51B5</color>
+    <color name="chatReceiver">#3F51B5</color>
+    <color name="border">#dedede</color>
+    <color name="counter">#01887A</color>
+
+    <!-- General -->
+    <color name="white">#FFFF</color>
+    <color name="black">#000</color>
+</resources>

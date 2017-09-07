@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/prefs_chat_category">
+        <CheckBoxPreference
+            android:title="Enter is send"
+            android:summary="@string/prefs_chat_entSendStr"
+            android:defaultValue="1"
+            android:key="chat_enterSend"/>
+        <ListPreference
+            android:title="Font size"
+            android:summary="@string/prefs_chat_fontStr"
+            android:key="chat_fontSize"
+            android:entries="@array/chat_font"
+            android:entryValues="@array/chat_font_values"
+            android:defaultValue="14"/>
+        <CheckBoxPreference
+            android:title="Show picture behind bubble"
+            android:summary="@string/prefs_chat_pBubbleStr"
+            android:defaultValue="1"
+            android:key="chat_showBubble"/>
+        <CheckBoxPreference
+            android:title="Show timestamps"
+            android:summary="@string/prefs_chat_stampStr"
+            android:defaultValue="0"
+            android:key="chat_showTimestamps"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/prefs_chat_category_1">
+        <Preference
+            android:title="@string/prefs_chat_delConvo"
+            android:summary="@string/prefs_chat_delConvoSum"
+            android:key="pref_chat_delConvo"/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dip">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/listLayouticon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:civ_border_color="@color/border"
+            app:civ_border_width="1dp"/>
+    </LinearLayout>
+
+    <com.rockerhieu.emojicon.EmojiconTextView
+        android:id="@+id/listLayoutName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="#444444"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_toRightOf="@id/thumbnail"
+        android:layout_toLeftOf="@+id/listLayoutimestamp"/>
+
+    <com.rockerhieu.emojicon.EmojiconTextView
+        android:id="@+id/listLayoutmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listLayoutName"
+        android:textColor="#888888"
+        android:layout_marginTop="5dp"
+        android:text="Seems gcm will take some time"
+        android:layout_toRightOf="@id/thumbnail"
+        android:layout_toLeftOf="@+id/listLayoutcount"/>
+
+    <TextView android:id="@+id/listLayoutimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12:00 AM"
+        android:textSize="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView android:id="@+id/listLayoutcount"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:textSize="10dp"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/listLayoutimestamp"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bg_circle"/>
+
+</RelativeLayout>

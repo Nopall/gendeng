@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Upload"
+        android:icon="@drawable/ic_done"
+        android:id="@+id/action_done"
+        app:showAsAction="ifRoom"
+        android:visible="false"/>
+
+    <item
+        android:title="Cancel"
+        android:icon="@drawable/ic_cancel"
+        android:id="@+id/action_cancel"
+        app:showAsAction="ifRoom"
+        android:visible="false"/>
+
+    <item android:title="Update picture"
+        android:id="@+id/profile_picture_update"/>
+
+</menu>

@@ -1,0 +1,25 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.softdev.weekimessenger.Layouts.Friends"
+    xmlns:tools="http://schemas.android.com/tools">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/friendView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"/>
+
+    <TextView
+        android:id="@+id/txtError"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/no_friends"
+        android:gravity="center"/>
+</FrameLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

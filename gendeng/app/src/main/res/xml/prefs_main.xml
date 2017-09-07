@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+    <header
+        android:fragment="com.softdev.weekimessenger.Activity.Settings$SettingsFragment"
+        android:title="@string/prefs_account"
+        android:summary="@string/prefs_account_summary">
+        <extra android:name="link" android:value="account"/>
+    </header>
+    <header
+        android:fragment="com.softdev.weekimessenger.Activity.Settings$SettingsFragment"
+        android:title="@string/prefs_notifications"
+        android:summary="@string/prefs_notifications_summary">
+        <extra android:name="link" android:value="notifications"/>
+    </header>
+    <header
+        android:fragment="com.softdev.weekimessenger.Activity.Settings$SettingsFragment"
+        android:title="@string/prefs_chats"
+        android:summary="@string/prefs_chats_summary">
+        <extra android:name="link" android:value="chat"/>
+    </header>
+</preference-headers>
