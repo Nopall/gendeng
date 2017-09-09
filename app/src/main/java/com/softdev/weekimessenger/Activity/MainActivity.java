@@ -105,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageScrollStateChanged(int state) {}
         });
-        Intent intent = new Intent(this, GCMService.class);
+//        Intent intent = new Intent(this, GCMService.class);
         Toast.makeText(this, "Hoi", Toast.LENGTH_SHORT).show();
-        startService(intent);
+//        startService(intent);
         if (InboxFragment != null) {
                 webService.RetrieveMessages();
         } else {

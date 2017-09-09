@@ -34,7 +34,7 @@ public class GCMService extends IntentService
     protected void onHandleIntent(Intent intent) {
         // Registering new GCM ID.
         registerGCM();
-        Log.d("GCM", "started");
+        Log.w("GCM", "started");
     }
 
     private void registerGCM() {
@@ -42,7 +42,7 @@ public class GCMService extends IntentService
         try
         {
             refreshedToken = FirebaseInstanceId.getInstance().getToken();
-            Log.d(TAG, "Refreshed token: " + refreshedToken);
+            Log.w(TAG, "Refreshed token: " + refreshedToken);
             UpdateUserId(refreshedToken);
             AppHandler.getInstance().getDataManager().setInt("gcmUpdate", 1);
         }
@@ -66,9 +66,11 @@ public class GCMService extends IntentService
             return;
         }
 
+        System.out.println("EEQ ini GCM Service 1");
         StringRequest request = new StringRequest(Request.Method.PUT, Config.GCM_UPDATE, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                System.out.println("EEQ onResponse volley-nya");
                 try {
                     JSONObject obj = new JSONObject(response);
                     if (!obj.getBoolean("error"))
@@ -86,23 +88,33 @@ public class GCMService extends IntentService
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                System.out.println("EEQ di dalem error volley-nya");
                 NetworkResponse networkResponse = error.networkResponse;
-                Log.d(TAG, "Volley error: " + error.getMessage() + ", code: " + networkResponse);
+                Log.w(TAG, "Volley error: " + error.getMessage() + ", code: " + networkResponse);
+
+                if (networkResponse != null) {
+                    System.out.println("EEQ di dalam error : " + networkResponse.statusCode);
+                    System.out.println("EEQ di dalam error : " + new String(networkResponse.data, 0, networkResponse.data.length));
+                }
             }
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
+                System.out.println("EEQ lumba2");
                 Map<String, String> params = new HashMap<>();
-                params.put("gcm", token);
+//                params.put("gcm", token);
+                params.put("gcm", "asu");
                 return params;
             }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
+                System.out.println("EEQ lumba2 3");
                 return AppHandler.getInstance().getAuthorization();
             }
         };
 
+        System.out.println("EEQ Volley add to request");
         AppHandler.getInstance().addToRequestQueue(request);
     }
 }
