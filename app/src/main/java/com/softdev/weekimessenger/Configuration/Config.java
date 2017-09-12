@@ -24,7 +24,7 @@ public class Config {
     public static final String INBOX_UPDATE = "97";
 
     // Server Config
-    public static final String BASE_URI = "https://backendplan.com/public";
+    public static final String BASE_URI = "http://chat-api.backendplan.com/public";
     public static final String REGISTER = BASE_URI + "/user/register";
     public static final String LOGIN = BASE_URI + "/user/login";
     public static final String CONVERSATIONS = BASE_URI + "/users/messages/";

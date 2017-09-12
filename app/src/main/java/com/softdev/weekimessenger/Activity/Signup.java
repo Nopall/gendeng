@@ -124,7 +124,7 @@ public class Signup extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONObject obj = new JSONObject(response);
-                    Log.d("Register", response);
+                    Log.w("Register", response);
                     if (!obj.getBoolean("error")) {
                         // Registration successful.
                         JSONObject accountObj = obj.getJSONObject("user");
@@ -157,7 +157,7 @@ public class Signup extends AppCompatActivity {
                 } catch (JSONException ex) {
                     progressDialog.dismiss();
                     Toast.makeText(Signup.this, "Server returning unknown error.", Toast.LENGTH_SHORT).show();
-                    Log.e("SignUp", "JSONException: " + ex.getMessage() + "\nResponse: " + response);
+                    Log.w("SignUp", "JSONException: " + ex.getMessage() + "\nResponse: " + response);
                 }
             }
         }, new Response.ErrorListener() {
@@ -165,7 +165,7 @@ public class Signup extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 progressDialog.dismiss();
                 Toast.makeText(Signup.this, "Unable to connect to server. "+ error.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.d("SignUp", "Mantap "+error);
+                Log.w("SignUp", "Mantap "+error);
             }
         }) {
             @Override

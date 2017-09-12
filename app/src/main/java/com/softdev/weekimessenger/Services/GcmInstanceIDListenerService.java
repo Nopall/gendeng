@@ -9,13 +9,13 @@ import com.google.android.gms.iid.InstanceIDListenerService;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
-public class GcmInstanceIDListenerService extends InstanceIDListenerService {
+public class GcmInstanceIDListenerService extends FirebaseInstanceIdService {
 
     // Raises when GCM ID is changed.
     @Override
     public void onTokenRefresh() {
         String refreshToken = FirebaseInstanceId.getInstance().getToken();
-        Log.v("ANYING", "Okeh"+refreshToken);
+        Log.w("ANYING", "Okeh"+refreshToken);
         SharedPreferences.Editor editor = getSharedPreferences("tokenid", MODE_PRIVATE).edit();
         editor.putString("token", refreshToken);
         editor.apply();

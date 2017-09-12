@@ -12,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.softdev.weekimessenger.Activity.Login;
 import com.softdev.weekimessenger.Configuration.Config;
 import com.softdev.weekimessenger.Handlers.AppHandler;
@@ -22,32 +23,43 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GCMService extends IntentService
+public class GCMService extends FirebaseInstanceIdService
 {
+    private String refreshedToken;
     private static final String TAG = GCMService.class.getSimpleName();
-    public GCMService()
-    {
-        super(TAG);
-    }
+//    public GCMService()
+//    {
+//        super(TAG);
+//    }
 
     @Override
-    protected void onHandleIntent(Intent intent) {
-        // Registering new GCM ID.
-        registerGCM();
-        Log.w("GCM", "started");
+    public void onTokenRefresh() {
+        super.onTokenRefresh();
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
+        registerGCM(refreshedToken);
     }
 
-    private void registerGCM() {
-        String refreshedToken = null;
+//    @Override
+//    protected void onHandleIntent(Intent intent) {
+//        // Registering new GCM ID.
+//        registerGCM();
+//        Log.w("GCM", "started");
+//    }
+
+    private void registerGCM(String token) {
         try
         {
-            refreshedToken = FirebaseInstanceId.getInstance().getToken();
-            Log.w(TAG, "Refreshed token: " + refreshedToken);
-            UpdateUserId(refreshedToken);
+//             = FirebaseInstanceId.getInstance().getToken();
+//            if (refreshedToken==null){
+//                refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//            }
+            Log.w(TAG, "Refreshed token: " + token);
+            UpdateUserId(token);
             AppHandler.getInstance().getDataManager().setInt("gcmUpdate", 1);
         }
         catch (Exception ex) {
-            Log.d(TAG, "Failed to complete token refresh", ex);
+            Log.w(TAG, "Failed to complete token refresh", ex);
             AppHandler.getInstance().getDataManager().setInt("gcmUpdate", 0);
         }
         Intent registrationComplete = new Intent(Config.GCM_UPDATED);
@@ -57,6 +69,7 @@ public class GCMService extends IntentService
 
     private void UpdateUserId(final String token) {
 
+        Log.w("ANYING", token);
         String SELF = AppHandler.getInstance().getDataManager().getString("user", null);
         if (SELF == null)
         {
@@ -75,14 +88,14 @@ public class GCMService extends IntentService
                     JSONObject obj = new JSONObject(response);
                     if (!obj.getBoolean("error"))
                     {
-                        Log.d("GCMService", "Updated.");
+                        Log.w("GCMService", "Updated.");
                     }
                     else {
-                        Log.d("GCMService", obj.getString("code"));
+                        Log.w("GCMService", obj.getString("code"));
                     }
 
                 } catch (JSONException e) {
-                    Log.d(TAG, "JSONException: " + e.getMessage());
+                    Log.w(TAG, "JSONException: " + e.getMessage());
                 }
             }
         }, new Response.ErrorListener() {
@@ -102,8 +115,8 @@ public class GCMService extends IntentService
             protected Map<String, String> getParams() throws AuthFailureError {
                 System.out.println("EEQ lumba2");
                 Map<String, String> params = new HashMap<>();
-//                params.put("gcm", token);
-                params.put("gcm", "asu");
+                params.put("gcm", token);
+//                params.put("gcm", "asu");
                 return params;
             }
 
